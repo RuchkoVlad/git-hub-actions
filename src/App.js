@@ -4,6 +4,7 @@ function App() {
     return (
         <div className="App">
             <h2>My first Apollo app 🚀</h2>
+            no
         </div>
     );
 }
