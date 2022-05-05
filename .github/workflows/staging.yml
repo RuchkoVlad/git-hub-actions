@@ -1,9 +1,9 @@
-name: GitHub Actions Demo
+name: GitHub Staging Deploy
 
 on: workflow_dispatch
 
 jobs:
-  Explore-GitHub-Actions:
+  Staging-deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 ** ** ** The job was automatically triggered by a MY event."
+      - run: echo "Staging has been successfully deployed"
