@@ -5,7 +5,10 @@ on: workflow_dispatch
 jobs:
   Staging-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      - run: echo "Staging has been successfully deployed"
+
       - name: Heroku login
       run: heroku login
 
@@ -17,5 +20,3 @@ jobs:
 
       - name: Release
       run: heroku container:release web --app git-hub-actions
-
-      - run: echo "Staging has been successfully deployed"
