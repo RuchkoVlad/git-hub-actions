@@ -5,6 +5,7 @@ function App() {
         <div className="App">
             <h2>My first Apollo app 🚀</h2>
             no
+            {console.log(12312)}
         </div>
     );
 }

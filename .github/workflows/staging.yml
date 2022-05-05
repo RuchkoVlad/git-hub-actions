@@ -6,4 +6,16 @@ jobs:
   Staging-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Heroku login
+      run: heroku login
+
+      - name: Heroku container login
+      run: heroku container:login
+
+      - name: build & push image
+      run: heroku container:push web --app git-hub-actions
+
+      - name: Release
+      run: heroku container:release web --app git-hub-actions
+
       - run: echo "Staging has been successfully deployed"
