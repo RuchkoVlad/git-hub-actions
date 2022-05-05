@@ -4,9 +4,13 @@ on: workflow_dispatch
 
 jobs:
   Staging-deploy:
+    name: "Build Container"
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+      uses: actions/checkout@v2
+
       - run: echo "Staging has been successfully deployed"
 
       - name: Heroku login
