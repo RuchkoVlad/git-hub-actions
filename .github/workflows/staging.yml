@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Heroku login
-      run: heroku login
+        run: heroku login
 
-        - name: Heroku container login
-      run: heroku container:login
+      - name: Heroku container login
+        run: heroku container:login
 
-        - name: build & push image
-      run: heroku container:push web --app git-hub-actions
+      - name: build & push image
+        run: heroku container:push web --app git-hub-actions
 
-        - name: Release
-      run: heroku container:release web --app git-hub-actions
+      - name: Release
+        run: heroku container:release web --app git-hub-actions
