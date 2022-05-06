@@ -1,11 +1,13 @@
-name: GitHub Staging Deploy #change on correct name
+name: GitHub Release #change on correct name
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [ release ]
 
 jobs:
-  #change "Staging-deploy" on correct name
-  Staging-deploy:
-    name: "Build Container"
+  #change "project-release" on correct name
+  Project-release:
+    name: "Release"
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +25,7 @@ jobs:
       - name: Heroku container login
         run: heroku container:login
 
-      - name: build & push image
+      - name: Build & Push image
         run: heroku container:push web --app git-hub-actions
 
       - name: Release
