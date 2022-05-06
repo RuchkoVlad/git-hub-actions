@@ -14,7 +14,7 @@ jobs:
       - name: Heroku login
         env:
           HEROKU_API_KEY: ${{ secrets.MY_SECRET }}
-          run: heroku container:login
+        run: heroku container:login
 
       - name: build & push image
         run: heroku container:push web --app git-hub-actions
