@@ -11,16 +11,14 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v2
 
-      - run: echo "Staging has been successfully deployed"
+      - name: Heroku login
+      run: heroku login
 
-#      - name: Heroku login
-#      run: heroku login
-#
-#      - name: Heroku container login
-#      run: heroku container:login
-#
-#      - name: build & push image
-#      run: heroku container:push web --app git-hub-actions
-#
-#      - name: Release
-#      run: heroku container:release web --app git-hub-actions
+        - name: Heroku container login
+      run: heroku container:login
+
+        - name: build & push image
+      run: heroku container:push web --app git-hub-actions
+
+        - name: Release
+      run: heroku container:release web --app git-hub-actions
