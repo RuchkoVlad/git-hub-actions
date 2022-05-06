@@ -11,17 +11,11 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v2
 
-      - uses: Heroku login
-        with:
+      - name: Heroku login
+        env:
           heroku_api_key: ${{secrets.MY_SECRET}}
           heroku_app_name: "git-hub-actions"
           heroku_email: "ruchko.vladislav@gmail.com"
-          usedocker: true
-
-      - name: Heroku login
-        run: heroku login
-
-      - name: Heroku container login
         run: heroku container:login
 
       - name: build & push image
