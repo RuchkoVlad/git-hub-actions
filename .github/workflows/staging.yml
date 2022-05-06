@@ -8,14 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.MY_SECRET}}
+          heroku_app_name: "git-hub-actions" #Must be unique in Heroku
+          heroku_email: "ruchko.vladislav@gmail.com"
+          usedocker: true
 
       - name: Heroku login
-        env:
-          heroku_api_key: ${{secrets.MY_SECRET}}
-          heroku_app_name: "git-hub-actions"
-          heroku_email: "ruchko.vladislav@gmail.com"
         run: heroku login
 
       - name: Heroku container login
