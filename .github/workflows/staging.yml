@@ -15,7 +15,7 @@ jobs:
         run: heroku login
 
       - name: symbol enter
-        run: echo
+        run: echo "r"
 
       - name: Heroku container login
         run: heroku container:login
