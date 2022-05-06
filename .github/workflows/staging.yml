@@ -16,6 +16,9 @@ jobs:
           heroku_api_key: ${{secrets.MY_SECRET}}
           heroku_app_name: "git-hub-actions"
           heroku_email: "ruchko.vladislav@gmail.com"
+        run: heroku login
+
+      - name: Heroku container login
         run: heroku container:login
 
       - name: build & push image
