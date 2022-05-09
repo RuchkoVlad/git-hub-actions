@@ -13,7 +13,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.MY_SECRET}}
-          heroku_app_name: ${{secrets.SECRET_NAME}}
           heroku_email: ${{secrets.SECRET_EMAIL}}
           usedocker: true
 
